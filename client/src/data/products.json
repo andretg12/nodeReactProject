@@ -1,0 +1,87 @@
+{
+    "product": [{
+            "name": "919 Shirt",
+            "price": "30",
+            "category": "Clothing'",
+            "description": "Cotton Shirt with an exclusive design from S.N.M",
+            "url": "https://i.imgur.com/1UolmmD.png"
+        }, {
+            "name": "NC Baseball Cap",
+            "price": "19.99",
+            "category": "Clothing",
+            "description": "Baseball cap with an exclusive S.N.M design celebrating North Carolina",
+            "url": "https://i.imgur.com/XgQW8sZ.png"
+        },
+        {
+            "name": "Martin Commemorative Shirt",
+            "price": "29.99",
+            "category": "Clothing",
+            "description": "Exclusive design from S.N.M ",
+            "url": "https://i.imgur.com/w6tCDHX.png"
+        },
+        {
+            "name": "American DJ Pro Event Table II Foldable Portable DJ Booth",
+            "price": "389.99",
+            "category": "Equipment",
+            "description": "Cool Table for events.",
+            "url": "https://images-na.ssl-images-amazon.com/images/I/71s5FCjIkoL._SX425_.jpg"
+        },
+        {
+            "name": "Rockville ROCKFORCE 384 Light/Fog Controller",
+            "price": "9995.95",
+            "category": "Equipment",
+            "description": "Professional Event lighting controller from Rockville",
+            "url": "https://images-na.ssl-images-amazon.com/images/I/71%2Bc4Qvj1iL._SX679_.jpg"
+        },
+        {
+            "name": "JBL Powered 3-Way High Directivity Line Array",
+            "price": "55775.99",
+            "category": "Equipment",
+            "description": "Array of JBL speakers for events",
+            "url": "https://images-na.ssl-images-amazon.com/images/I/511XZRVO22L._SX425_.jpg"
+        },
+        {
+            "name": "VTX M22 Dual 12\" Professional Stage Monitor",
+            "price": "3500.99",
+            "category": "Equipment",
+            "description": "Professional stage monitor.",
+            "url": "https://www.springtree.net/image/cache/data/jm22-900x900.jpg"
+        },
+        {
+            "name": "JBL VRX932LAP",
+            "description": "12 in. Two-Way Powered Line Array Loudspeaker System",
+            "price": "2699.99",
+            "category": "Equipment",
+            "url": "https://media.sweetwater.com/api/i/q-82__ha-5fe3891258096e1b__hmac-0868ec9def1e08118e35266cd8a5d1332a1521f5/images/items/750/VRX932LAP-large.jpg"
+        },
+        {
+            "name": "JBL VRX918SP",
+            "description": "18 in. High Power Powered Flying Subwoofer",
+            "price": "1999.99",
+            "category": "Equipment",
+            "url": "https://media.sweetwater.com/api/i/q-82__ha-24b0e1ddb59c9bd9__hmac-7606b7c2d05588e6bd582e401edf36853a39d723/images/items/750/VRX918SP-large.jpg"
+        },
+        {
+            "name": "VRX915M",
+            "description": "15 in. Two-Way Stage Monitor",
+            "price": "1699.99",
+            "category": "Equipment",
+            "url": "https://www.gearcity.ca/wp-content/uploads/2017/01/JBL-VRX915M-Front.jpg"
+        },
+        {
+            "name": "The Face Off - Drake Vs. Meek Mill And Beyonce Vs. Rihanna",
+            "description": "Charlotte, NC",
+            "price": "22.50",
+            "category": "Event Ticket",
+            "url": "https://s1.ticketm.net/dam/c/80b/f3cd8d24-c3ae-4fa0-b4bc-1ba99f9b380b_106091_TABLET_LANDSCAPE_16_9.jpg"
+        },
+        {
+            "name": "John Mayer at Spectrum Center",
+            "description": "Charlotte, NC",
+            "price": "79.50",
+            "category": "Event Ticket",
+            "url": "https://www.billboard.com/files/styles/article_main_image/public/media/john-mayer-performs-on-tour-april-2017-billboard-1548.jpg"
+
+        }
+    ]
+}
