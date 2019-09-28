@@ -33,7 +33,7 @@ router.get('/productfilter', (req, res) => {
 	}
 	connection.query(sqlQuery, [],
 		(err, data) => {
-			if (err) throw new Error(`${req.query.category} is an invalid type. Please enter in either these instead: "other", "animal", "character"`)
+			if (err) throw new Error(`${req.query.category} is an invalid category`)
 			res.json(data)
 		})
 
@@ -45,5 +45,19 @@ router.get('/contact', (req, res) => {
 		res.send(data)
 	})
 })
+
+router.get("/productinvoice/:id/:qty", (req, res) => {
+	let item = req.params.id;
+	let quantity = req.params.qty;
+	connection.query(
+		"SELECT product_id, product_name, (price * ?)AS invoice_price FROM products INNER JOIN prices ON price.product_id = products.product_id WHERE product_id = ?",
+		[item, quantity, item],
+		(err, data) => {
+			if (err) return res.send(err)
+			res.json(data);
+		}
+	);
+});
+
 
 module.exports = router;
