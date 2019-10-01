@@ -1,26 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./product.css";
-const ProductDetails = ({ match }) => {
-	console.log(match);
-	let data = [];
-	fetch(`http://localhost:3000/api/products/${match.params.id}`)
-		.then(res => res.json())
-		.then(
-			res => {
-				console.log(res);
-				data.push(res);
-			},
-			err => console.log(err)
-		);
+
+function ProductDetails({
+	match: {
+		params: { id }
+	}
+}) {
+	const [product, setProduct] = useState({ product_name: "init-value" });
+
+	async function fetchProduct() {
+		const response = await fetch(`http://localhost:3000/api/products/${id}`);
+		const data = await response.json();
+		setProduct(data[0]);
+	}
+	useEffect(() => {
+		fetchProduct();
+	}, []);
+
 	return (
 		<div>
-			<article>{/* {data.map(product => {
-					return (
-						
-					)
-				})} */}</article>
+			<article>
+				<h2>{product["product_name"]}</h2>
+			</article>
 		</div>
 	);
-};
+}
 
 export default ProductDetails;
