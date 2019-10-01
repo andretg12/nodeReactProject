@@ -47,21 +47,21 @@ CREATE TABLE `products` (
 DROP TABLE IF EXISTS `contacts` ;
 
 CREATE TABLE  `contacts` (
-  `contact_id` INT NOT NULL AUTO_INCREMENT,
-  `contact_fname` VARCHAR(128) NOT NULL,
-  `contact_lname` VARCHAR(128) NOT NULL,
+  `contact_id` INT NOT NULL AUTO_INCREMENT,	
+  `contact_name` VARCHAR(128) NOT NULL,
+  `contact_category` VARCHAR(128),
   `contact_email` VARCHAR(128) NOT NULL,
   `contact_message` VARCHAR(255) NOT NULL,
   `contact_date` DATETIME NOT NULL DEFAULT NOW(),
   PRIMARY KEY (`contact_id`));
-  INSERT INTO `contacts` (`contact_fname`, `contact_lname`, `contact_email`, `contact_message`)
+  INSERT INTO `contacts` (`contact_name`, `contact_email`,`contact_category`, `contact_message`)
   VALUES 
-  ("Andre", "Torrealba", "andre.torrealba@icloud.com", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium qui")
-  ,("Jony", "Giler", "jonathangiler@hotmail.com", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium qui")
-  ,("Rafa", "Botello", "rafaelbotellov@outlook.es", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu")
-  ,("Lucy", "Yang", "ly.yang005@gmail.com", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu")
-  ,("Braxton", "Jackson", "bcjackson95@gmail.com", "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see")
-  ,("Reginald", "Johnson Jr.", "reggiejohnson1997@gmail.com", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta");
+  ("Andre Torrealba", "andre.torrealba@icloud.com","Equipment", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium qui")
+  ,("Jony Giler", "jonathangiler@hotmail.com","Clothing", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium qui")
+  ,("Rafa Botello", "rafaelbotellov@outlook.es","Tickets", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu")
+  ,("Lucy Yang", "ly.yang005@gmail.com","Equipment", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu")
+  ,("Braxton Jackson", "bcjackson95@gmail.com","Question", "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see")
+  ,("Reginald Johnson Jr.", "reggiejohnson1997@gmail.com","Question", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta");
   
   
 
@@ -130,8 +130,6 @@ CREATE TABLE  `cart` (
     REFERENCES `customers` (`customer_id`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE);
-
-
 
 -- -----------------------------------------------------
 -- Table `ecommerce`.`cart_detail`

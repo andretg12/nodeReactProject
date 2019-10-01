@@ -6,13 +6,34 @@ html {
 
 }
 
+.wrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper h2 {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.info,
+.submit {
+    padding: 10px;
+}
 
 .subscribe-form {
     display: inline-block;
     margin-bottom: 52px;
-    width: 542px;
+    width: 33.875em;
     margin: 0 auto;
     position: relative;
+}
+
+.error {
+    color: red;
 }
 
 .subscribe-form input {
@@ -57,12 +78,9 @@ html {
     border: 1px solid #233EDE;
     font-size: 14px;
     text-transform: uppercase;
-    height: 100%;
+    height: 4em;
     width: 192px;
     cursor: pointer;
-    position: absolute;
-    right: 0;
-    bottom: 0;
 }
 
 .hero {
@@ -72,16 +90,17 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('https://pbs.twimg.com/media/DUU_cLzW0AA00WJ.jpg');
+    background-image: url('https://images.unsplash.com/photo-1491339526372-c7112c8e37f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 form {
     text-align: center
 }
+
+.form-wrapper {}
 
 .fa-github {
     color: black;

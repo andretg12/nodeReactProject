@@ -6,14 +6,22 @@ html {
 	overflow-x: hidden !important;
 }
 
+.what-container {
+	display: flex;
+	padding-top: 10px;
+	flex-direction: row;
+	width: 100vw;
+}
+
 .what {
-	font-size: 14px;
+	font-size: 0.875em;
 	font-weight: 700;
-	padding: 20px 50px;
+	padding: 1.25em 3.125em;
 	color: #fff;
 	background: #233EDE !important;
-	letter-spacing: 1.5px;
+	letter-spacing: 0.09375rem;
 	text-transform: uppercase;
+	flex-grow: 1
 }
 
 .product-hero {
@@ -32,7 +40,8 @@ html {
 
 
 .bg-products {
-	background-color: rgb(201, 157, 157) !important;
+	/* background-color: rgb(201, 157, 157) !important; */
+	background-color: black;
 }
 
 .fa-github {
@@ -67,9 +76,13 @@ html {
 
 .card {
 	background-color: white;
-	box-shadow: 0.1875em 0.1875em 0.3125em 0.289em #000;
-	width: 24em;
-	margin-bottom: 50px;
+	box-shadow: 0.1875em 0.1875em 0.3125em 0.375em black;
+	height: 100%;
+
+}
+
+.js-product {
+	margin: 5px 0px;
 }
 
 .info-wrap h4 {
@@ -81,7 +94,8 @@ html {
 }
 
 .bottom--section {
-	padding-left: 10px;
+	height: 10.625em;
+	padding: 0.7em
 }
 
 .vcss {
