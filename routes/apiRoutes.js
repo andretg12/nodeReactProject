@@ -75,19 +75,21 @@ router.post('/user', function (req, res) {
 		name,
 		email,
 		message,
-		category
+		category,
 	} = req.body
+	console.log("here")
+	console.log(message)
 	if (!message) {
 		return res.status(400).send({
 			error: 400,
 			message: 'Please provide message'
 		});
 	}
-	connection.query(`INSERT INTO contacts(contact_name, category, contact_email, contact_message) VALUES(?,?,?,?) `, [name, category, email, message], function (error, results) {
-		if (error) throw error;
+	connection.query(`INSERT INTO contacts(contact_name, contact_email, contact_message, category) VALUES(?,?,?,?) `, [name, email, message, category], function (error, insertID) {
+		if (error) res.send(`failed to insert contact`);
 		return res.send({
 			error: false,
-			id: results,
+			contact_id: insertID,
 			message: 'New user has been created successfully.'
 		});
 	});
