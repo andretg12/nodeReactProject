@@ -20,7 +20,9 @@ function ProductDetails({
 	return (
 		<div>
 			<article>
-				<h2>{product["product_name"]}</h2>
+				<div>
+					<img src={product.product_img} />
+				</div>
 			</article>
 		</div>
 	);

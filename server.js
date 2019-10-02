@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 4000;
@@ -6,21 +7,13 @@ const app = express();
 const morgan = require('morgan')
 // security package
 const helmet = require("helmet")
-
 const apiRoutes = require("./routes/apiRoutes");
-
-const dotenv = require('dotenv')
-const result = dotenv.config()
-
-if (result.error) {
-	throw result.error
-}
-
 
 // Define middleware here
 app.use(express.urlencoded({
 	extended: true
 }));
+
 app.use(morgan('combined'))
 app.use(helmet())
 app.use(express.json());
