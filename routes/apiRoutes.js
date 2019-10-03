@@ -9,6 +9,7 @@ const connection = mysql.createConnection({
 	password: process.env.MYPASSWORD,
 	database: "ecommerce"
 })
+// this route gets id from the param of the url and uses it to get an specific product
 router.get("/products/:id", (req, res) => {
 	const id = req.params.id
 	connection.query(`SELECT * from products LEFT JOIN price ON price.product_id = products.product_id WHERE products.product_id = ? `, [id], (err, data) => {
@@ -47,6 +48,7 @@ router.get('/productfilter', (req, res) => {
 			res.json(data)
 		})
 })
+
 // Gets all contacts and messages
 router.get('/contacts', (req, res) => {
 	connection.query(`SELECT * FROM contacts`, (err, data) => {
@@ -54,15 +56,16 @@ router.get('/contacts', (req, res) => {
 		res.send(data)
 	})
 })
+
 // Tells you the total for an specific product
 router.get("/productinvoice/:id/:qty", (req, res) => {
 	// gettubg the two variables from the parameters
 	let item = req.params.id;
 	let quantity = req.params.qty;
-	// running the query on conecction with a dynamic query
+	// running the query on conecction with a dynamic query that uses the params from the url
 	connection.query(
-		"SELECT product_id, product_name, (price * ?)AS invoice_price FROM products INNER JOIN prices ON price.product_id = products.product_id WHERE product_id = ?",
-		[item, quantity, item],
+		`SELECT products.product_id, product_name, (price * ? * 1.08)AS invoice_price FROM products INNER JOIN price ON price.product_id = products.product_id WHERE products.product_id = ?`,
+		[quantity, item],
 		(err, data) => {
 			if (err) return res.send(err)
 			res.json(data);
@@ -71,21 +74,21 @@ router.get("/productinvoice/:id/:qty", (req, res) => {
 });
 // Inserts user and comment to contacts table
 router.post('/user', function (req, res) {
+	// getting the parameters i need for the query from the body of the request
 	const {
 		name,
 		email,
 		message,
-		category,
 	} = req.body
-	console.log("here")
-	console.log(message)
+	// if there is no message return an error
 	if (!message) {
 		return res.status(400).send({
 			error: 400,
 			message: 'Please provide message'
 		});
 	}
-	connection.query(`INSERT INTO contacts(contact_name, contact_email, contact_message, category) VALUES(?,?,?,?) `, [name, email, message, category], function (error, insertID) {
+	// run the query
+	connection.query(`INSERT INTO contacts(contact_name, contact_email, contact_message) VALUES(?,?,?) `, [name, email, message], function (error, insertID) {
 		if (error) res.send(`failed to insert contact`);
 		return res.send({
 			error: false,

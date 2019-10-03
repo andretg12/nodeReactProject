@@ -1,17 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 .navbar {
-	background: transparent !important;
+	background: firebrick !important;
 	z-index: 2;
 	width: 100vw;
-	top: 50px;
 	padding: 0;
 	font-family: Roboto;
-	position: absolute
+	position: fixed;
 }
 
 .nav-link {
-	color: yellow !important;
+	color: whitesmoke !important;
 
 }
 

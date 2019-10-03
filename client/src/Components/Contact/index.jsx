@@ -17,7 +17,7 @@ class Contact extends Component {
 	}
 
 	validEmailRegex = RegExp(
-		/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 	);
 
 	validateForm = errors => {
@@ -46,9 +46,6 @@ class Contact extends Component {
 				errors.message =
 					value.length < 8 ? "Message must be 8 characters long!" : "";
 				break;
-			case "category":
-				errors.category = value.length === 0;
-				break;
 			default:
 				break;
 		}
@@ -73,11 +70,9 @@ class Contact extends Component {
 			})
 				.then(function(data) {
 					console.log("Request success: ", data);
-					console.log("hey im here");
 				})
-				.catch(function(error) {
-					console.log("Request failure: ", error);
-				});
+				.then(alert(`Your message has been sent`))
+				.then(event.target.reset());
 			console.info("Valid Form");
 		} else {
 			console.error("Invalid Form");
@@ -145,7 +140,9 @@ class Contact extends Component {
 								<small>Message must be eight characters in length.</small>
 							</div>
 							<div className="submit">
-								<button>Create</button>
+								<button href={`http://localhost:4000/api/contacts`}>
+									Submit
+								</button>
 							</div>
 						</form>
 					</div>

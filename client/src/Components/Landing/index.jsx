@@ -81,7 +81,10 @@ const Landing = () => {
 							<i className="fas fa-water max-width-14 mb-2 fa-7x"></i>
 							<h3 className="h4">Professional Design</h3>
 							<p className="mb-0">
-								Achieve any layout you want for your event. Be wavy 🌊
+								Achieve any layout you want for your event. Be wavy{" "}
+								<span role="img" aria-label="wave emoji">
+									🌊
+								</span>
 							</p>
 						</div>
 					</div>
@@ -125,7 +128,6 @@ const Landing = () => {
 								mute="true"
 								playing={false}
 								playsinline={true}
-								playing
 							/>
 						</div>
 						<div className="col-md-6 col-sm-12">
@@ -182,7 +184,6 @@ const Landing = () => {
 								url="https://www.youtube.com/watch?v=58u-zkDLNPg"
 								volume={0}
 								playsinline={true}
-								playing
 							/>
 						</article>
 					</div>

@@ -5,16 +5,9 @@ import Footer from "./Components/Footer";
 import Landing from "./Components/Landing";
 import Contact from "./Components/Contact";
 import ProductDetails from "./Components/ProductDetails";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
-	state = {
-		page: 0
-	};
-	setPageChange = i => {
-		this.setState({ page: i });
-	};
-
 	render() {
 		return (
 			<Router>

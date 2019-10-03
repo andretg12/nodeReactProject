@@ -6,6 +6,16 @@ html {
 	overflow-x: hidden !important;
 }
 
+@media only screen and (max-width: 375px) {
+	.what-container {
+		display: flex;
+		padding-top: 10px;
+		flex-direction: row;
+		width: 100vw;
+		flex-wrap: wrap;
+	}
+}
+
 .what-container {
 	display: flex;
 	padding-top: 10px;
