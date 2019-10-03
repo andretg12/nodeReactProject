@@ -32,7 +32,7 @@ app.use("/api", apiRoutes);
 
 // Serves the react page 
 app.get("*", function (req, res) {
-	res.sendFile(path.join(__dirname, "./client/src/public/index.html"));
+	res.send("Success");
 });
 
 // Server initiates 

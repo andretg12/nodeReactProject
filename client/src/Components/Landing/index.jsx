@@ -126,7 +126,7 @@ const Landing = () => {
 								url="https://www.youtube.com/watch?v=vE_JjQMqQeY"
 								volume={0}
 								mute="true"
-								playing={false}
+								playing={true}
 								playsinline={true}
 							/>
 						</div>
@@ -184,6 +184,7 @@ const Landing = () => {
 								url="https://www.youtube.com/watch?v=58u-zkDLNPg"
 								volume={0}
 								playsinline={true}
+								playing={true}
 							/>
 						</article>
 					</div>
