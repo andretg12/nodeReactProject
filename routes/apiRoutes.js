@@ -3,11 +3,11 @@ const mysql = require("mysql");
 const router = require("express").Router()
 // Setting up the MySQL connection
 const connection = mysql.createConnection({
-	host: "localhost",
+	host: "d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
 	port: 3306,
-	user: 'root',
+	user: 'ettylhc7p47ckyph',
 	password: process.env.MYPASSWORD,
-	database: "ecommerce"
+	database: "zab5rvaac77tmff8"
 })
 // this route gets id from the param of the url and uses it to get an specific product
 router.get("/products/:id", (req, res) => {
